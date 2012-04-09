@@ -2,7 +2,7 @@
 
 Utilizes an extendable Backbone.js View, Model and HTML Markup conventions to allow for a simple way to indicate form validation errors using Twitter bootstrap tooltips and some CSS.
 
-
+![The concept in action](https://github.com/saskjavascript/Backbone---Bootstrap---Form-Validation/raw/master/img/in.action.png)
 
 # Notes
 
@@ -12,7 +12,7 @@ There are numerous areas where more meta-programming could simplify the number o
 
 # Usage
 
-1. Create a new View Class that extends the FormValidator class:
+1) Create a new View Class that extends the FormValidator class:
 
 ```javascript
 v.UserInfoForm = v.FormValidator.extend({
@@ -20,7 +20,7 @@ v.UserInfoForm = v.FormValidator.extend({
   ...
 ```
 
-2. Add change tracking for the fields you wish to track and create simple setters.
+2) Add change tracking for the fields you wish to track and create simple setters.
 
 ```javascript
   events: {
@@ -48,7 +48,7 @@ v.UserInfoForm = v.FormValidator.extend({
   ...
 ```
 
-3. Add a fieldSelectorMap attribute that contains each model field mapped to the dom selector and an updater type depending on the field.
+3) Add a fieldSelectorMap attribute that contains each model field mapped to the dom selector and an updater type depending on the field.
   
 ```javascript
   fieldSelectorMap: {
@@ -60,7 +60,7 @@ v.UserInfoForm = v.FormValidator.extend({
   ...
 ````
 
-4. Add rel="tooltip" and title attributes to the form nodes you will be tracking for validation, these are used by the FormValidator to drive messaging in the tooltips.
+4) Add rel="tooltip" and title attributes to the form nodes you will be tracking for validation, these are used by the FormValidator to drive messaging in the tooltips.
 
 ```html
   <input type="text" class="input" id="name" rel="tooltip" title="Your name cannot be Bob." placeholder="anything but Bob will work">
@@ -75,7 +75,7 @@ v.UserInfoForm = v.FormValidator.extend({
   </select>
 ```
 
-5. Create an Instance of your new View Class and pass it a reference to a Backbone Model that tracks the attributes in your form:
+5) Create an Instance of your new View Class and pass it a reference to a Backbone Model that tracks the attributes in your form:
 
 ```javascript
   r.User = new APP.Models.User();
