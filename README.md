@@ -1,4 +1,4 @@
-# Backbone + Bootstrap Form Validation
+# Backbone + Bootstrap + Form Validation
 
 Utilizes an extendable Backbone.js View, Model and Twitter Bootstrap 2.0 HTML Markup conventions to allow for a simple way to indicate form validation errors using Twitter bootstrap tooltips and some CSS.
 
