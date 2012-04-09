@@ -62,7 +62,7 @@ v.UserInfoForm = v.FormValidator.extend({
 
 4) Add rel="tooltip" and title attributes to the form nodes you will be tracking for validation, these are used by the FormValidator to drive messaging in the tooltips.
 
-*Note:* You will need to adhere to the Twitter Bootstrap Markup patterns, this code is shortened for the sake of brevity.
+*Note:* You will need to adhere to the [Twitter Bootstrap Markup patterns](http://twitter.github.com/bootstrap/base-css.html#forms), this code is shortened for the sake of brevity.
 
 ```html
   <input type="text" class="input" id="name" rel="tooltip" title="Your name cannot be Bob." placeholder="anything but Bob will work">
