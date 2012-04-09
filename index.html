@@ -8,12 +8,71 @@
 </head>
 <body>
   
+  <div class="container">    
+    <div class="row">
+      <div class="span8">
+        <form id="user-info" class="form-horizontal">
+          <fieldset>
+            <legend>All About Me</legend>
+            <div class="control-group">
+              <label class="control-label" for="name">Your Name</label>
+              <div class="controls">
+                <input type="text" class="input" id="name" rel="tooltip" title="Your name cannot be Bob." placeholder="anything but Bob will work">
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label" for="age">Your Age</label>
+              <div class="controls">
+                <input type="number" class="input-small" id="age" rel="tooltip" title="Age must be between 1 and 100." min="0" max="100" step="1" placeholder="> 0 < 100">
+              </div>
+            </div>            
+            <div class="control-group">
+              <label class="control-label" for="agreed">I agree to terms</label>
+              <div class="controls">
+                <label class="checkbox">
+                  <input type="checkbox" id="agreed" rel="tooltip" title="You must agree. NOW!">
+                </label>
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label" for="best-pet">The best pet is:</label>
+              <div class="controls">
+                <select id="best-pet" rel="tooltip" title="Dogs are best!">
+                  <option value="">something</option>
+                  <option value="cat">Cat</option>
+                  <option value="dog">Dog</option>
+                  <option value="ferret">Ferret</option>
+                  <option value="lizard">Lizard</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
   
-  
+  <!-- vendor dependencies -->
   <script type="text/javascript" src="js/vendor/jquery.min.js"></script>
   <script type="text/javascript" src="js/vendor/underscore.min.js"></script>
   <script type="text/javascript" src="js/vendor/backbone.min.js"></script>
   <script type="text/javascript" src="js/vendor/bootstrap.min.js"></script>
+  
+  <!-- app namespace -->
+  <script type="text/javascript" src="js/app.js"></script>
+  
+  <!-- models -->
+  <script type="text/javascript" src="js/models/user.model.js"></script>
+  
+  <!-- views -->
+  <script type="text/javascript" src="js/views/form.validator.js"></script>
+  <script type="text/javascript" src="js/views/user.info.form.js"></script>
+  
+  <!-- the runtime -->
+  <script type="text/javascript" src="js/start.js"></script>
   
 </body>
 </html>
