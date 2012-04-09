@@ -2,6 +2,8 @@
 
 Utilizes an extendable Backbone.js View, Model and HTML Markup conventions to allow for a simple way to indicate form validation errors using Twitter bootstrap tooltips and some CSS.
 
+
+
 # Notes
 
 This code is _not_ perfect. There are bugs; the idea is to present the idea of how to wrap bootstrap controls in backbone views/models and to prompt the viewer/reader to think about meta-programming.
