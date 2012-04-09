@@ -1,6 +1,6 @@
 # Backbone + Bootstrap Form Validation
 
-Utilizes an extendable Backbone.js View, Model and HTML Markup conventions to allow for a simple way to indicate form validation errors using Twitter bootstrap tooltips and some CSS.
+Utilizes an extendable Backbone.js View, Model and Twitter Bootstrap 2.0 HTML Markup conventions to allow for a simple way to indicate form validation errors using Twitter bootstrap tooltips and some CSS.
 
 ![The concept in action](https://github.com/saskjavascript/Backbone---Bootstrap---Form-Validation/raw/master/img/in.action.png)
 
@@ -84,10 +84,10 @@ v.UserInfoForm = v.FormValidator.extend({
 
 # Dependencies
 
-1. jQuery 1.7.2
-2. Underscore.js 1.3.2
-3. Backbone.js 0.9.2
-4. Twitter Bootstrap (css + js for the tooltip dependencies) 2.0
+1. [jQuery 1.7.2](http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js)
+2. [Underscore.js 1.3.2](http://documentcloud.github.com/underscore/)
+3. [Backbone.js 0.9.2](http://documentcloud.github.com/backbone/)
+4. [Twitter Bootstrap (css + js for the tooltip dependencies) 2.0](http://twitter.github.com/bootstrap/)
 
 # License / Usage
 
