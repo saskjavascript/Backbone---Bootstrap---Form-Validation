@@ -20,10 +20,11 @@ APP.Views.UserInfoForm = APP.Views.FormValidator.extend({
   el: "#user-info"
   
   bindingsHash: {
-    "name"     : "#name",
-    "age"      : "#age",
-    "agreed"   : "#agreed",
-    "bestPet" : "#best-pet"
+    // fieldName : selector
+    "name"       : "#name", 
+    "age"        : "#age",
+    "agreed"     : "#agreed",
+    "bestPet"    : "#best-pet"
   }
   
 });
