@@ -1,6 +1,6 @@
 # Backbone + Bootstrap + Form Validation
 
-Utilizes he [Backbone ModelBinder plugin](https://github.com/theironcook/Backbone.ModelBinder), an extendable Backbone.js View (form.validator.js), a Backbone Model and Twitter Bootstrap 2.0 HTML Markup conventions to allow for a simple way to indicate form validation errors using Twitter bootstrap tooltips and some CSS.
+Utilizes the [Backbone ModelBinder plugin](https://github.com/theironcook/Backbone.ModelBinder), an extendable Backbone.js View (form.validator.js), any Backbone Model and Twitter Bootstrap 2.0 HTML Markup conventions to allow for a simple way to indicate form validation errors using Twitter bootstrap tooltips and some CSS.
 
 ![The concept in action](https://github.com/saskjavascript/Backbone---Bootstrap---Form-Validation/raw/master/img/in.action.png)
 
@@ -12,10 +12,10 @@ Pull requests accepted :)
 
 # Usage
 
-1) Create a new View Class that extends the FormValidator class and includes the standard [Backbone ModelBinder plugin](https://github.com/theironcook/Backbone.ModelBinder) bindingsHash:
+1) Create a new View that extends the FormValidator class and includes the standard [Backbone ModelBinder plugin](https://github.com/theironcook/Backbone.ModelBinder) bindingsHash:
 
 ```javascript
-v.UserInfoForm = v.FormValidator.extend({
+APP.Views.UserInfoForm = APP.Views.FormValidator.extend({
   
   el: "#user-info"
   
@@ -76,7 +76,43 @@ v.UserInfoForm = v.FormValidator.extend({
   </form>
 ```
 
-3) Create an Instance of your new View Class and pass it a reference to a Backbone Model that tracks the attributes in your form:
+3) Create a Backbone Model with a validate function that passes the name of the field if validation fails:
+
+```javascript
+
+APP.Models.User = Backbone.Model.extend({
+
+  defaults: {
+    name: "Roy",
+    age:  21,
+    agreed: undefined,
+    bestPet: "dog"
+  },
+  
+  validate: function(attrs) {
+    if(attrs.name.toLowerCase() === "bob") {
+      return "name"; // convention for form.validator.js is that it uses the field values raised in these errors to lookup in the views bindingsHash
+    }
+    
+    if(attrs.age <= 0 || attrs.age > 100) {
+      return "age";
+    }
+    
+    if(attrs.agreed === false) {
+      return "agreed";
+    }
+    
+    if(attrs.bestPet !== "dog"){
+      return "bestPet";
+    }
+    
+    APP.trigger("valid:input");
+  }
+});
+
+```
+
+4) Create an Instance of your new View and pass it a reference to a Backbone Model that maps to the attributes in your form:
 
 ```javascript
   var User     = new APP.Models.User();
